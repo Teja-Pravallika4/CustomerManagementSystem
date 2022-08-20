@@ -1,0 +1,50 @@
+﻿
+
+@model MVC.Models.Customer
+@{
+    ViewBag.Title = "AddOrEdit";
+}
+
+<div class="form-body">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.CustomerID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerName)
+            @Html.EditorFor(model => model.CustomerName)
+            @Html.ValidationMessageFor(model => model.CustomerName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.City)
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age)
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.Age)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone)
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Pincode)
+            @Html.EditorFor(model => model.Pincode)
+            @Html.ValidationMessageFor(model => model.Pincode)
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn button" />
+            <input type="reset" value="Reset" class="btn button" />
+        </div>
+    }
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+}
